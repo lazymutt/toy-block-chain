@@ -18,28 +18,28 @@ Here's an example run at proof of work set to 7:
 *
 *
 *
-Block index:          0
+Block index:    0
  timestamp:     2022-03-21 18:24:04.485142
  nonce:         365673038
  data:          Genesis Block
  previous hash: 0
  current hash:  00000004529416b7011dcd0100b6974e9a83891e4c611cb33b43ea19caf35636
 
-Block index:          1
+Block index:    1
  timestamp:     2022-03-21 18:38:49.866148
  nonce:         158106747
  data:          Block 1
  previous hash: 00000004529416b7011dcd0100b6974e9a83891e4c611cb33b43ea19caf35636
  current hash:  000000033dd12e201a98e1d420ce3a8b6908d1ef6350c2f9ba9183a9f3bd7d28
 
-Block index:          2
+Block index:    2
  timestamp:     2022-03-21 18:45:26.447984
  nonce:         51644834
  data:          Block 2
  previous hash: 000000033dd12e201a98e1d420ce3a8b6908d1ef6350c2f9ba9183a9f3bd7d28
  current hash:  0000000e88466655ec52a380b97707760de96336bcf76df827e51af7a154df09
 
-Block index:          3
+Block index:    3
  timestamp:     2022-03-21 18:47:36.435977
  nonce:         60966362
  data:          Block 3
