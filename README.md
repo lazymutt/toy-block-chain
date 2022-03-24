@@ -1,6 +1,6 @@
-# toy block chain
+# toy blockchain
 
-A toy block chain, now with mining, in 60 lines of code.
+A toy blockchain, now with mining, in 60 lines of code.
 
 Based on:
 https://medium.com/@mukeshmishra0381/create-your-own-blockchain-using-python-7c6a117c5f70
