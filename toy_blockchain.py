@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 # -*- coding: utf-8 -*-
 """
-A toy block chain, now with mining, in 60 lines of code.
+A toy blockchain, now with mining, in 71 lines of code.
 
 Based on:
 https://medium.com/@mukeshmishra0381/create-your-own-blockchain-using-python-7c6a117c5f70
@@ -81,14 +81,30 @@ def create_genesis_block(pow_level):
     return Block(0, "Genesis Block", "0", pow_level)
 
 
-def next_block(last_block, pow_level):
+def next_block(last_block, pow_level, data):
     """
     create new block
     """
     this_index = last_block.index + 1
-    this_data = "Block " + str(this_index)
     this_hash = last_block.currenthash
-    return Block(this_index, this_data, this_hash, pow_level)
+    return Block(this_index, data, this_hash, pow_level)
+
+
+def provide_data(this_count):
+    """
+    Generator function to loop through lines of text.
+    """
+
+    lines = '''The sky above the port was the color of television, tuned to a dead channel.
+It was a Sprawl voice and a Sprawl joke.
+You are the artiste of the slightly funny deal.
+You I let work here for entertainment value.
+She was wearing faded French orbital fatigues and new white sneakers.
+Iffy, he said, it's all looking very iffy tonight.'''.split('\n')
+
+    for line_count in range(this_count):
+        sub_count = line_count % len(lines)
+        yield lines[sub_count]
 
 
 def main():
@@ -103,19 +119,20 @@ def main():
     args = parser.parse_args()
 
     # create genesis block
-    block_chain = [create_genesis_block(args.pow)]
-    previous_block = block_chain[0]
+    blockchain = [create_genesis_block(args.pow)]
+    previous_block = blockchain[0]
+    data_source = provide_data(args.blocks)
 
     # create new blocks
     for _ in range(0, args.blocks):
-        block_to_add = next_block(previous_block, args.pow)
-        block_chain.append(block_to_add)
+        block_to_add = next_block(previous_block, args.pow, next(data_source))
+        blockchain.append(block_to_add)
         previous_block = block_to_add
         print("*")
 
     # display entire block chain
-    for item, _ in enumerate(block_chain):
-        block_chain[item].block_info()
+    for item, _ in enumerate(blockchain):
+        blockchain[item].block_info()
 
 
 if __name__ == '__main__':
