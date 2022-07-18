@@ -81,3 +81,6 @@ Block index:    7
 
 ```
 
+## License
+
+[MIT License](LICENSE)
