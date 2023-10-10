@@ -5,7 +5,7 @@ A toy blockchain, now with mining, in ~70 lines of code.
 Based on:
 https://medium.com/@mukeshmishra0381/create-your-own-blockchain-using-python-7c6a117c5f70
 
-Which itself may or may not be heavily borrowed from:
+Which itself may or may not have heavily borrowed from:
 https://medium.com/@lhartikk/a-blockchain-in-200-lines-of-code-963cc1cc0e54
 
 Cleaned up the example and added proof of work.
